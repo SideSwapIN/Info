@@ -71,8 +71,9 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${isAddress(
-    address
+  const path = `https://raw.githubusercontent.com/SideSwapIN/TokenInfo/main/zkfair/assets/${isAddress(
+    address,
+    'tolower'
   )}/logo.png`
 
   return (

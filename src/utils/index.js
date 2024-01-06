@@ -284,7 +284,10 @@ export function getTimestampRange(timestamp_from, period_length, periods) {
 
 export const toNiceDateYear = (date) => dayjs.utc(dayjs.unix(date)).format('MMMM DD, YYYY')
 
-export const isAddress = (value) => {
+export const isAddress = (value, tolower) => {
+  if (value && tolower) {
+    return value.toLowerCase();
+  }
   try {
     return ethers.utils.getAddress(value.toLowerCase())
   } catch {
