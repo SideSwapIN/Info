@@ -56,54 +56,56 @@ export default function Warning({ type, show, setShow, address }) {
   )
 
   return (
-    <WarningWrapper show={show}>
-      <AutoColumn gap="4px">
-        <RowFixed>
-          <StyledWarningIcon />
-          <Text fontWeight={600} lineHeight={'145.23%'} ml={'10px'}>
-            Token Safety Alert
-          </Text>
-        </RowFixed>
-        {textContent}
-        {below800 ? (
-          <div>
-            <Hover style={{ marginTop: '10px' }}>
-              <Link
-                fontWeight={500}
-                lineHeight={'145.23%'}
-                color={'#2172E5'}
-                href={'https://scan.zkfair.io/address/' + address}
-                target="_blank"
-              >
-                View {type === 'token' ? 'token' : 'pair'} contract on Etherscan
-              </Link>
-            </Hover>
-            <RowBetween style={{ marginTop: '20px' }}>
-              <div />
+    <div>
+      <WarningWrapper show={show}>
+        <AutoColumn gap="4px">
+          <RowFixed>
+            <StyledWarningIcon />
+            <Text fontWeight={600} lineHeight={'145.23%'} ml={'10px'}>
+              Token Safety Alert
+            </Text>
+          </RowFixed>
+          {textContent}
+          {below800 ? (
+            <div>
+              <Hover style={{ marginTop: '10px' }}>
+                <Link
+                  fontWeight={500}
+                  lineHeight={'145.23%'}
+                  color={'#2172E5'}
+                  href={'https://scan.zkfair.io/address/' + address}
+                  target="_blank"
+                >
+                  View {type === 'token' ? 'token' : 'pair'} contract on Etherscan
+                </Link>
+              </Hover>
+              <RowBetween style={{ marginTop: '20px' }}>
+                <div />
+                <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
+                  I understand
+                </ButtonDark>
+              </RowBetween>
+            </div>
+          ) : (
+            <RowBetween style={{ marginTop: '10px' }}>
+              <Hover>
+                <Link
+                  fontWeight={500}
+                  lineHeight={'145.23%'}
+                  color={'#2172E5'}
+                  href={'https://scan.zkfair.io/address/' + address}
+                  target="_blank"
+                >
+                  View {type === 'token' ? 'token' : 'pair'} contract on Etherscan
+                </Link>
+              </Hover>
               <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
                 I understand
               </ButtonDark>
             </RowBetween>
-          </div>
-        ) : (
-          <RowBetween style={{ marginTop: '10px' }}>
-            <Hover>
-              <Link
-                fontWeight={500}
-                lineHeight={'145.23%'}
-                color={'#2172E5'}
-                href={'https://scan.zkfair.io/address/' + address}
-                target="_blank"
-              >
-                View {type === 'token' ? 'token' : 'pair'} contract on Etherscan
-              </Link>
-            </Hover>
-            <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
-              I understand
-            </ButtonDark>
-          </RowBetween>
-        )}
-      </AutoColumn>
-    </WarningWrapper>
+          )}
+        </AutoColumn>
+      </WarningWrapper>
+    </div>
   )
 }

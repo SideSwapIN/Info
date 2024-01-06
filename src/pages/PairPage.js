@@ -117,8 +117,8 @@ const WarningIcon = styled(AlertCircle)`
 `
 
 const WarningGrouping = styled.div`
-  opacity: ${({ disabled }) => disabled && '0.4'};
-  pointer-events: ${({ disabled }) => disabled && 'none'};
+  /* opacity: ${({ disabled }) => disabled && '0.4'}; */
+  /* pointer-events: ${({ disabled }) => disabled && 'none'}; */
 `
 
 function PairPage({ pairAddress, history }) {
@@ -218,7 +218,7 @@ function PairPage({ pairAddress, history }) {
       <span />
       <Warning
         type={'pair'}
-        show={!dismissed && listedTokens && !(listedTokens.includes(token0?.id) && listedTokens.includes(token1?.id))}
+        show={false && !dismissed && listedTokens && !(listedTokens.includes(token0?.id) && listedTokens.includes(token1?.id))}
         setShow={markAsDismissed}
         address={pairAddress}
       />

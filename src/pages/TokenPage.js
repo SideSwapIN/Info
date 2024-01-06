@@ -96,8 +96,8 @@ const WarningIcon = styled(AlertCircle)`
 `
 
 const WarningGrouping = styled.div`
-  opacity: ${({ disabled }) => disabled && '0.4'};
-  pointer-events: ${({ disabled }) => disabled && 'none'};
+  /* opacity: ${({ disabled }) => disabled && '0.4'}; */
+  /* pointer-events: ${({ disabled }) => disabled && 'none'}; */
 `
 
 function TokenPage({ address, history }) {
@@ -193,7 +193,7 @@ function TokenPage({ address, history }) {
       <ThemedBackground backgroundColor={transparentize(0.6, backgroundColor)} />
       <Warning
         type={'token'}
-        show={!dismissed && listedTokens && !listedTokens.includes(address)}
+        show={false && !dismissed && listedTokens && !listedTokens.includes(address)}
         setShow={markAsDismissed}
         address={address}
       />
