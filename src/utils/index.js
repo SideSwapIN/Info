@@ -301,10 +301,10 @@ export const setThemeColor = (theme) => document.documentElement.style.setProper
 export const Big = (number) => new BigNumber(number)
 
 export const urls = {
-  showTransaction: (tx) => `https://etherscan.io/tx/${tx}/`,
-  showAddress: (address) => `https://www.etherscan.io/address/${address}/`,
-  showToken: (address) => `https://www.etherscan.io/token/${address}/`,
-  showBlock: (block) => `https://etherscan.io/block/${block}/`,
+  showTransaction: (tx) => `https://scan.zkfair.io/tx/${tx}/`,
+  showAddress: (address) => `https://www.scan.zkfair.io/address/${address}/`,
+  showToken: (address) => `https://www.scan.zkfair.io/token/${address}/`,
+  showBlock: (block) => `https://scan.zkfair.io/block/${block}/`,
 }
 
 export const formatTime = (unix) => {

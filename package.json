@@ -90,6 +90,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "http-proxy-middleware": "^2.0.6",
     "react-helmet": "^6.1.0"
   }
 }

@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http'
 
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'http://61.10.9.22:10004/subgraphs/name/we/sideswap',
+    uri: 'https://subgraph.sideswap.finance/subgraphs/name/sideswap/info',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
@@ -12,7 +12,7 @@ export const client = new ApolloClient({
 
 export const healthClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'http://61.10.9.22:10622/graphql',//http://61.10.9.22:10004/subgraphs
+    uri: 'https://subgraph.sideswap.finance/graphql',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
@@ -36,7 +36,7 @@ export const stakingClient = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://scan.zkfair.io/graphiql',
+    uri: 'https://subgraph.sideswap.finance/subgraphs/name/sideswap/info'//'https://subgraph.sideswap.finance/subgraphs/name/we/sideswap',
   }),
   cache: new InMemoryCache(),
 })
