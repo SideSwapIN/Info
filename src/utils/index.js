@@ -42,13 +42,13 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
     return (
       `https://sideswap.finance/#/` +
       (remove ? `remove` : `add`) +
-      `/v2/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${'ETH'}`
+      `/${token0Address === '0xd33db7ec50a98164cc865dfaa64666906d79319c' ? 'USDC' : token0Address}/${'USDC'}`
     )
   } else {
     return (
       `https://sideswap.finance/#/` +
       (remove ? `remove` : `add`) +
-      `/v2/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address
+      `/${token0Address === '0xd33db7ec50a98164cc865dfaa64666906d79319c' ? 'USDC' : token0Address}/${token1Address === '0xd33db7ec50a98164cc865dfaa64666906d79319c' ? 'USDC' : token1Address
       }`
     )
   }
@@ -58,13 +58,13 @@ export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
     return `https://sideswap.finance/#/swap?inputCurrency=${token0Address}`
   } else {
-    return `https://sideswap.finance/#/swap?inputCurrency=${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address
-      }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address}`
+    return `https://sideswap.finance/#/swap?inputCurrency=${token0Address === '0xd33db7ec50a98164cc865dfaa64666906d79319c' ? 'USDC' : token0Address
+      }&outputCurrency=${token1Address === '0xd33db7ec50a98164cc865dfaa64666906d79319c' ? 'USDC' : token1Address}`
   }
 }
 
 export function getMiningPoolLink(token0Address) {
-  return `https://sideswap.finance/#/uni/ETH/${token0Address}`
+  return `https://sideswap.finance/#/uni/USDC/${token0Address}`
 }
 
 export function getUniswapAppLink(linkVariable) {
@@ -73,7 +73,7 @@ export function getUniswapAppLink(linkVariable) {
     return baseUniswapUrl
   }
 
-  return `${baseUniswapUrl}/ETH/${linkVariable}`
+  return `${baseUniswapUrl}/USDC/${linkVariable}`
 }
 
 export function localNumber(val) {

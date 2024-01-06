@@ -46,7 +46,7 @@ const CurrencySelect = () => {
 
   const getOther = () => {
     if (currency === 'USD') {
-      return 'ETH'
+      return 'USDC'
     } else {
       return 'USD'
     }

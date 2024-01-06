@@ -24,9 +24,9 @@ function formatPercent(rawPercent) {
 }
 
 export default function UniPrice() {
-  const daiPair = usePairData('0xa478c2975ab1ea89e8196811f51a7b7ade33eb11')
-  const usdcPair = usePairData('0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc')
-  const usdtPair = usePairData('0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852')
+  const daiPair = usePairData('0xa9f4eeb30dc48d4ef77310a2108816c80457cf6f')
+  const usdcPair = usePairData('0xD33Db7EC50A98164cC865dfaa64666906d79319C')
+  const usdtPair = usePairData('0x3f97bf3cd76b5ca9d4a4e9cd8a73c24e32d6c193')
 
   const totalLiquidity = useMemo(() => {
     return daiPair && usdcPair && usdtPair
@@ -35,26 +35,26 @@ export default function UniPrice() {
   }, [daiPair, usdcPair, usdtPair])
 
   const daiPerEth = daiPair ? parseFloat(daiPair.token0Price).toFixed(2) : '-'
-  const usdcPerEth = usdcPair ? parseFloat(usdcPair.token0Price).toFixed(2) : '-'
+  // const usdcPerEth = usdcPair ? parseFloat(usdcPair.token0Price).toFixed(2) : '-'
   const usdtPerEth = usdtPair ? parseFloat(usdtPair.token1Price).toFixed(2) : '-'
 
   return (
     <PriceCard>
       <AutoColumn gap="10px">
         <RowFixed>
-          <TYPE.main>DAI/ETH: {formattedNum(daiPerEth, true)}</TYPE.main>
+          <TYPE.main>DAI/USDC: {formattedNum(daiPerEth, true)}</TYPE.main>
           <TYPE.light style={{ marginLeft: '10px' }}>
             {daiPair && totalLiquidity ? formatPercent(daiPair.trackedReserveUSD / totalLiquidity) : '-'}
           </TYPE.light>
         </RowFixed>
-        <RowFixed>
+        {/* <RowFixed>
           <TYPE.main>USDC/ETH: {formattedNum(usdcPerEth, true)}</TYPE.main>
           <TYPE.light style={{ marginLeft: '10px' }}>
             {usdcPair && totalLiquidity ? formatPercent(usdcPair.trackedReserveUSD / totalLiquidity) : '-'}
           </TYPE.light>
-        </RowFixed>
+        </RowFixed> */}
         <RowFixed>
-          <TYPE.main>USDT/ETH: {formattedNum(usdtPerEth, true)}</TYPE.main>
+          <TYPE.main>USDT/USDC: {formattedNum(usdtPerEth, true)}</TYPE.main>
           <TYPE.light style={{ marginLeft: '10px' }}>
             {usdtPair && totalLiquidity ? formatPercent(usdtPair.trackedReserveUSD / totalLiquidity) : '-'}
           </TYPE.light>
