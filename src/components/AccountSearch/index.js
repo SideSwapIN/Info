@@ -59,6 +59,7 @@ const AccountLink = styled.span`
   color: ${({ theme }) => theme.link};
   font-size: 14px;
   font-weight: 500;
+  word-break: break-all;
 `
 
 const DashGrid = styled.div`
