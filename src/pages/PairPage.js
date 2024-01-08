@@ -499,7 +499,7 @@ function PairPage({ pairAddress, history }) {
                   </Column>
                   <ButtonLight color={backgroundColor}>
                     <Link color={backgroundColor} external href={'https://scan.zkfair.io/address/' + pairAddress}>
-                      View on Etherscan ↗
+                      View on Explorer ↗
                     </Link>
                   </ButtonLight>
                 </TokenDetailsLayout>

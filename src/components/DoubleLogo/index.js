@@ -7,7 +7,8 @@ export default function DoubleTokenLogo({ a0, a1, size = 24, margin = false }) {
     position: relative;
     display: flex;
     flex-direction: row;
-    margin-right: ${({ sizeraw, margin }) => margin && (sizeraw / 3 + 8).toString() + 'px'};
+    /* margin-right: ${({ sizeraw, margin }) => margin && (sizeraw / 3 + 8).toString() + 'px'}; */
+    width: ${({ sizeraw }) => sizeraw * 2 + 'px'};
   `
 
   const HigherLogo = styled(TokenLogo)`
