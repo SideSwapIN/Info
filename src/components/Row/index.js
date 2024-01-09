@@ -28,6 +28,7 @@ export const AutoRow = styled(Row)`
   & > * {
     margin: ${({ gap }) => gap} !important;
   }
+  width: ${({ width }) => width ?? '100%'};
 `
 
 export const RowFixed = styled(Row)`
