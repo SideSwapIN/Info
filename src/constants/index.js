@@ -32,6 +32,8 @@ export const TOKEN_BLACKLIST = [
   '0x3d7e683fc9c86b4d653c9e47ca12517440fad14e',
   '0xfae9c647ad7d89e738aba720acf09af93dc535f7',
   '0x7296368fe9bcb25d3ecc19af13655b907818cc09',
+
+  '0xa6e11deaff55249f2b5d70503c0eb0c92ed49a01'// sideswap
 ]
 
 // pair blacklist
@@ -40,6 +42,7 @@ export const PAIR_BLACKLIST = [
   '0x97cb8cbe91227ba87fc21aaf52c4212d245da3f8',
   '0x1acba73121d5f63d8ea40bdc64edb594bd88ed09',
   '0x7d7e813082ef6c143277c71786e5be626ec77b20',
+  '0xa6e11deaff55249f2b5d70503c0eb0c92ed49a01'// sideswap
 ]
 
 // warnings to display if page contains info about blocked token
