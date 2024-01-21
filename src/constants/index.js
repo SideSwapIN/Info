@@ -49,6 +49,8 @@ export const PAIR_BLACKLIST = [
 export const BLOCKED_WARNINGS = {
   '0xf4eda77f0b455a12f3eb44f8653835f377e36b76':
     'TikTok Inc. has asserted this token is violating its trademarks and therefore is not available.',
+  '0xa6e11deaff55249f2b5d70503c0eb0c92ed49a01':
+    'This is a scam token, don’t believe it',
 }
 
 /**
