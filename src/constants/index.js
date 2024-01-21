@@ -42,7 +42,7 @@ export const PAIR_BLACKLIST = [
   '0x97cb8cbe91227ba87fc21aaf52c4212d245da3f8',
   '0x1acba73121d5f63d8ea40bdc64edb594bd88ed09',
   '0x7d7e813082ef6c143277c71786e5be626ec77b20',
-  '0xa6e11deaff55249f2b5d70503c0eb0c92ed49a01'// sideswap
+  '0x6bbb3376776dd35b95f1b516776a06d8303c8011'// sideswap/usec
 ]
 
 // warnings to display if page contains info about blocked token
