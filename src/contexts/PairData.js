@@ -24,7 +24,7 @@ import {
   getTimestampsForChanges,
   splitQuery,
 } from '../utils'
-import { timeframeOptions, TRACKED_OVERRIDES_PAIRS, TRACKED_OVERRIDES_TOKENS } from '../constants'
+import { timeframeOptions, TRACKED_OVERRIDES_PAIRS, TRACKED_OVERRIDES_TOKENS, TOKEN_BLACKLIST } from '../constants'
 import { useLatestBlocks } from './Application'
 import { updateNameData } from '../utils/data'
 
@@ -496,6 +496,9 @@ export function Updater() {
 
       // get data for every pair in list
       let topPairs = await getBulkPairData(formattedPairs, ethPrice)
+      topPairs = topPairs.filter(
+        (pair) => TOKEN_BLACKLIST.includes(pair.token0.id) && TOKEN_BLACKLIST.includes(pair.token1.id)
+      )
       topPairs && updateTopPairs(topPairs)
     }
     ethPrice && getData()
