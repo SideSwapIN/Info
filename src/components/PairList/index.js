@@ -14,7 +14,7 @@ import DoubleTokenLogo from '../DoubleLogo'
 import FormattedName from '../FormattedName'
 import QuestionHelper from '../QuestionHelper'
 import { TYPE } from '../../Theme'
-import { PAIR_BLACKLIST } from '../../constants'
+import { PAIR_BLACKLIST, TOKEN_BLACKLIST } from '../../constants'
 import { AutoColumn } from '../Column'
 
 dayjs.extend(utc)
@@ -140,6 +140,7 @@ const formatDataText = (value, trackedValue, supressWarning = false) => {
 }
 
 function PairList({ pairs, color, disbaleLinks, maxItems = 10, useTracked = false }) {
+  console.log('pairs==>', pairs)
   const below600 = useMedia('(max-width: 600px)')
   const below740 = useMedia('(max-width: 740px)')
   const below1080 = useMedia('(max-width: 1080px)')
@@ -237,6 +238,9 @@ function PairList({ pairs, color, disbaleLinks, maxItems = 10, useTracked = fals
     Object.keys(pairs)
       .filter(
         (address) => !PAIR_BLACKLIST.includes(address) && (useTracked ? !!pairs[address].trackedReserveUSD : true)
+      )
+      .filter(
+        (address) => TOKEN_BLACKLIST.includes(pairs[address].token0.id) && TOKEN_BLACKLIST.includes(pairs[address].token1.id)
       )
       .sort((addressA, addressB) => {
         const pairA = pairs[addressA]

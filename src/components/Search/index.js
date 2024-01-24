@@ -287,7 +287,7 @@ export const Search = ({ small = false }) => {
           return 1
         })
         .filter((token) => {
-          if (TOKEN_BLACKLIST.includes(token.id)) {
+          if (!TOKEN_BLACKLIST.includes(token.id)) {
             return false
           }
           const regexMatches = Object.keys(token).map((tokenEntryKey) => {
@@ -366,6 +366,9 @@ export const Search = ({ small = false }) => {
           })
           return regexMatches.some((m) => m)
         })
+        .filter(
+          (pair) => TOKEN_BLACKLIST.includes(pair.token0.id) && TOKEN_BLACKLIST.includes(pair.token1.id)
+        )
       : []
   }, [allPairData, uniquePairs, value])
 
