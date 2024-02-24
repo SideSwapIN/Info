@@ -36,7 +36,7 @@ export const stakingClient = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://subgraph.sideswap.finance/subgraphs/name/sideswap/info'//'https://subgraph.sideswap.finance/subgraphs/name/we/sideswap',
+    uri: 'https://subgraph.sideswap.finance/subgraphs/name/sideswap/block'//'https://subgraph.sideswap.finance/subgraphs/name/we/sideswap',
   }),
   cache: new InMemoryCache(),
 })
